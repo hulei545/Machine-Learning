@@ -1,0 +1,14 @@
+clc;clear all ; close all;
+load('264_mystery_data.mat');
+[mapped_PCA, mapping_PCA] = compute_mapping(mystery_data, 'PCA');
+figure;
+scatter(mapped_PCA(:,1), mapped_PCA(:,2), 5); 
+title('Result for PCA ');
+xlabel('First Eigenvector');
+ylabel('Second Eigenvector');
+[mapped_Lap, mapping_Lap] = compute_mapping(mystery_data, 'Laplacian',2,12,1);
+figure;
+scatter(mapped_Lap(:,1), mapped_Lap(:,2), 5); 
+title('Result for Laplacian');
+xlabel('First Eigenvector');
+ylabel('Second Eigenvector');
